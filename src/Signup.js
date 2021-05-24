@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { FormControl, InputGroup } from "react-bootstrap";
-import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
+import { EyeFill, EyeSlashFill, PersonFill } from "react-bootstrap-icons";
 
-export default class Login extends Component {
+export default class Signup extends Component {
     constructor(props) {
         super();
         this.state = {
@@ -13,6 +13,7 @@ export default class Login extends Component {
         event.preventDefault();
         console.log(event.target.Email.value);
         console.log(event.target.Password.value);
+        console.log(event.target.Username.value);
     }
     showHidePassword = async () => {
         await this.setState({ isRevealPassword: !this.state.isRevealPassword });
@@ -22,6 +23,24 @@ export default class Login extends Component {
             <form onSubmit={this.handleSubmit}>
                 <br></br>
                 {/* <h3>Log in</h3> */}
+                <div className="form-group">
+                    <label>Name</label>
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            type="text"
+                            required
+                            name='Username'
+                            placeholder="Enter User Name"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        />
+                        <InputGroup.Append>
+                            <InputGroup.Text id="basic-addon1">
+                                <PersonFill color='#ff811b' size={20} />
+                            </InputGroup.Text>
+                        </InputGroup.Append>
+                    </InputGroup>
+                </div>
                 <div className="form-group">
                     <label>Email</label>
                     <InputGroup className="mb-3">
@@ -54,9 +73,9 @@ export default class Login extends Component {
                             <InputGroup.Text id="basic-addon1">
                                 {
                                     this.state.isRevealPassword ?
-                                        <EyeFill size={20} color="#ff811b" />
+                                        <EyeFill size={20} color='#ff811b' />
                                         :
-                                        <EyeSlashFill size={20} color="#ff811b" />
+                                        <EyeSlashFill size={20} color='#ff811b' />
                                 }
                             </InputGroup.Text>
                         </InputGroup.Append>
@@ -70,10 +89,10 @@ export default class Login extends Component {
                     </div>
                 </div> */}
 
-                <button type="submit" className="btn btn-primary btn-lg btn-block">Login</button>
-                <p className="forgot-password text-right">
+                <button type="submit" className="btn btn-primary btn-lg btn-block">Sign Up</button>
+                {/* <p className="forgot-password text-right">
                     <a href="#">Forgot password?</a>
-                </p>
+                </p> */}
             </form>
         );
     }
