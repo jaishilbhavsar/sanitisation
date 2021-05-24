@@ -1,0 +1,26 @@
+// $card-bg:rgb(51, 51, 51) !important;
+$card-border-color:rgb(113, 113, 113) !important;
+
+.ContactUsPage {
+    background-color: rgb(113, 113, 113);
+
+    .row {
+        margin: 0 !important;
+    }
+
+    .col {
+        background-color: rgb(51, 51, 51) !important;
+    }
+
+    .card {
+        background-color: rgb(113, 113, 113) !important;
+        border: none;
+    }
+
+    .card-body {
+        margin: 10px 10px !important;
+        background-color: rgb(51, 51, 51) !important;
+        border: solid 1px rgb(113, 113, 113);
+        border-radius: 10px;
+    }
+}

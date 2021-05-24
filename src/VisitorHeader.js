@@ -25,7 +25,7 @@ export default class VisitorHeader extends Component {
                                 <Nav.Link className="pr-5" href='/home'>Home</Nav.Link>
                                 <Nav.Link className="pr-5" href='/home'>About Us</Nav.Link>
                                 <Nav.Link className="pr-5" href='/home'>Contact Us</Nav.Link>
-                                <Nav.Item className="">
+                                <Nav.Item className="pl-5">
                                     <Button variant="primary" onClick={this.handleOpen}>
                                         Login/SignUp
                                     </Button>
@@ -34,7 +34,6 @@ export default class VisitorHeader extends Component {
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-                <p>Visitor Header Works</p>
                 {/* <Button variant="primary" onClick={this.handleOpen}>
                     Open Modal
                 </Button>{''} */}
