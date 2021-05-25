@@ -12,7 +12,6 @@ export default class VisitorHeader extends Component {
         await this.setState({ isLoginOpen: false });
     };
     render() {
-        const { classes } = this.props;
         return (
             <div>
                 <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
