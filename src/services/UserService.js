@@ -1,8 +1,8 @@
 // UserService.js
 // AboutUs.js
-import React, { Component } from 'react';
+import React from 'react';
 import { APIurl } from "../config.json";
-export default class UserService extends Component {
+export default class UserService extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
