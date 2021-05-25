@@ -1,6 +1,6 @@
 {
     "APIurl": {
-       "URL": "http://localhost:3000/"
+       "URL": "https://sanitisation-backend.herokuapp.com/"
     },
     "DateFormat": "DD-MMM-YYYY",
     "DateTimeFormat": "DD-MMM-YYYY HH:mm:ss",
