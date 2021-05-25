@@ -2,19 +2,27 @@ import React, { Component } from "react";
 import { FormControl, InputGroup, Modal } from "react-bootstrap";
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
 import ForgotPassword from "./ForgotPassword";
-
+import UserService from "./services/UserService";
 export default class Login extends Component {
+    userService = new UserService();
+
     constructor(props) {
         super();
         this.state = {
             isRevealPassword: false,
             isForgotPasswordOpen: false
+
         }
     }
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(event.target.Email.value);
         console.log(event.target.Password.value);
+        let data = {
+            email: event.target.Email.value,
+            password: event.target.Password.value
+        };
+        this.userService.Login(data);
     }
     handleOpen = async () => {
         await this.setState({ isForgotPasswordOpen: true });

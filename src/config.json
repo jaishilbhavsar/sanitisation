@@ -1,0 +1,10 @@
+{
+    "APIurl": {
+       "URL": "http://localhost:3000/"
+    },
+    "DateFormat": "DD-MMM-YYYY",
+    "DateTimeFormat": "DD-MMM-YYYY HH:mm:ss",
+    "TimeFormat": "HH:mm:ss",
+    "Environment": "TEST",
+    "RefreshInterval": 180
+ }
