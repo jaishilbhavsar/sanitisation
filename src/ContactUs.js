@@ -1,12 +1,8 @@
 // ContactUs.js
 // AboutUs.js
 import React, { Component } from 'react';
-import { Button, Card, Col, Modal, Row } from 'react-bootstrap';
-import LoginSignup from './LoginSignup';
-import { Image } from "react-bootstrap";
-import VisitorHeader from './VisitorHeader';
+import { Card, Col, Row } from 'react-bootstrap';
 import './ContactUs.scss';
-import sanitiserHomeImage from './assets/images/sanitiserHome.jpg';
 export default class ContactUs extends Component {
     constructor(props) {
         super(props);

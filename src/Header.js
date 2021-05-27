@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Container, Modal, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 export default class Header extends Component {
     render() {
         return (
