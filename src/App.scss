@@ -44,15 +44,18 @@
 $CustomeLabelColor:white;
 
 
+
 // label
-$customModalBackground:rgb(93, 90, 90);
+$customModalBackground:rgb(71, 69, 69);
+$customModalBorder:#ffc89b;
 $cutomPrimaryColor:#ff811b;
 
 // Modal
 $modal-content-color:$CustomeLabelColor;
 $modal-content-bg:$customModalBackground;
-$modal-content-border-color:white;
+$modal-content-border-color:$customModalBorder;
 $modal-content-border-width:2px;
+$modal-content-border-radius:20px;
 
 // Tab
 $nav-tabs-link-active-bg:$cutomPrimaryColor;

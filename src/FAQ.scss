@@ -1,0 +1,29 @@
+@import '/src/App.scss';
+
+.FAQPage {
+    .accordion {
+        padding: 10px 20px;
+
+        .card {
+            // background-color: pink;
+            border-radius: 10px;
+            border: 1px solid $customModalBorder;
+            text-align: left;
+        }
+
+        .card-img-top {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .card-header {
+            background-color: $customModalBackground;
+            color: $CustomeLabelColor;
+        }
+
+        .card-body {
+            // border-radius: 0px 0px 10px 10px;
+            color: $cutomPrimaryColor;
+
+        }
+    }
+}

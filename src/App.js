@@ -1,9 +1,6 @@
-import logo from './logo.svg';
 import './App.scss';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import LoginSignup from './LoginSignup';
 import Home from './Home';
-import Header from './Header';
 import Protected from './Protected';
 import Visitor from './Visitor';
 

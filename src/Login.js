@@ -89,7 +89,7 @@ export default class Login extends Component {
 
                     <button type="submit" className="btn btn-primary btn-lg btn-block">Login</button>
                     <p className="forgot-password text-right">
-                        <a href="#" onClick={this.handleOpen}>Forgot password?</a>
+                        <a onClick={this.handleOpen}>Forgot password?</a>
                     </p>
 
                 </form>
