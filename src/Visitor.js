@@ -38,13 +38,13 @@ export default class Visitor extends Component {
                 <div style={{ marginTop: '10px' }}>
                     <HowItWorks />
                 </div>
-                <div style={{ marginTop: '10px' }}>
+                <div style={{ marginTop: '20px' }} id="faq">
                     <FAQ />
                 </div>
-                <div style={{ marginTop: '10px' }}>
+                <div style={{ marginTop: '20px' }} id="aboutUs">
                     <AboutUs />
                 </div>
-                <div style={{ marginTop: '10px' }}>
+                <div style={{ marginTop: '20px' }} id="contactUs">
                     <ContactUs />
                 </div>
             </div >
