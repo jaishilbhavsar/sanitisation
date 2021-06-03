@@ -1,4 +1,6 @@
 // $card-bg:rgb(51, 51, 51) !important;
+@import '/src/App.scss';
+
 $card-border-color:rgb(113, 113, 113) !important;
 
 .ContactUsPage {
@@ -22,5 +24,16 @@ $card-border-color:rgb(113, 113, 113) !important;
         background-color: rgb(51, 51, 51) !important;
         border: solid 1px rgb(113, 113, 113);
         border-radius: 10px;
+    }
+
+    svg {
+        size: 20;
+        height: 50px;
+        width: 30px;
+        color: $customModalBorder;
+    }
+
+    svg:hover {
+        color: $cutomPrimaryColor;
     }
 }

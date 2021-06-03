@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import './HowItWorks.scss';
-import sanitiserHomeImage from './assets/images/sanitiserHome.jpg';
+import sanitiserHomeImage from './assets/images/demo.jpg';
 export default class HowItWorks extends Component {
     constructor(props) {
         super(props);
