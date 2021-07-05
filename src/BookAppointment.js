@@ -100,7 +100,7 @@ class BookAppointment extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <br></br>
                         <div className="form-group">
-                            <label>Email</label>
+                            <label>appointment Date</label>
                             <InputGroup className="mb-3">
                                 <FormControl
                                     type="date"
