@@ -1,22 +1,19 @@
-// UserService.js
-// AboutUs.js
 import React from 'react';
 import { APIurl } from "../config.json";
-export default class UserService extends React.Component {
+export default class AddressService extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
         }
     }
-    Login = async (data) => {
+    GetAllUserAddresses = async (data) => {
         let url = APIurl.URL;
         let res;
         const requestOptions = {
-            method: 'POST',
+            method: 'GET',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
         };
-        await fetch(url + 'user/login', requestOptions)
+        await fetch(url + 'address/getAddressByUserID/' + data, requestOptions)
             .then(response => response.json())
             .then(result => { res = result; })
             .catch(error => { res = false });

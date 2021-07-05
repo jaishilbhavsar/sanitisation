@@ -4,9 +4,12 @@ import LoginSignup from './LoginSignup';
 import './VisitorHeader.scss';
 import logo from './assets/images/logo_transparent.png';
 export default class VisitorHeader extends Component {
-    state = {
-        isLoginOpen: false,
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoginOpen: false,
+        };
+    }
     handleOpen = async () => {
         await this.setState({ isLoginOpen: true });
     };

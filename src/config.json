@@ -2,6 +2,12 @@
     "APIurl": {
        "URL": "https://sanitisation-backend.herokuapp.com/"
     },
+      "access_key":"HNSNHOCRBGSYYZYGSDL1",
+      "secret_key":"mK1MvBHmHXraib3bUhDoUb05S6CE74MDFGa43Evk",
+      "bucket_location":"US",
+      "cloudfront_host":"cloudfront.amazonaws.com",
+      "host_base":" cellar-c2.services.clever-cloud.com",
+      "host_bucket":"%(bucket)s.cellar-c2.services.clever-cloud.com",
     "DateFormat": "DD-MMM-YYYY",
     "DateTimeFormat": "DD-MMM-YYYY HH:mm:ss",
     "TimeFormat": "HH:mm:ss",
