@@ -100,15 +100,15 @@ class BookAppointment extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <br></br>
                         <div className="form-group">
-                            <label>appointment Date</label>
+                            <label>Appointment Date</label>
                             <InputGroup className="mb-3">
                                 <FormControl
                                     type="date"
                                     min={new Date().toISOString().split("T")[0]}
                                     required
                                     name='appointmentDate'
-                                    placeholder="Enter User Email"
-                                    aria-label="Username"
+                                    placeholder="Select Appointment Date"
+                                    aria-label="appointmentDate"
                                     aria-describedby="basic-addon1"
                                 />
                                 <InputGroup.Append>
@@ -127,7 +127,7 @@ class BookAppointment extends Component {
                                     required
                                     name='noOfRooms'
                                     placeholder="Enter User Email"
-                                    aria-label="Username"
+                                    aria-label="noOfRooms"
                                     aria-describedby="basic-addon1"
                                     value={this.state.noOfRooms}
                                     min="1"
