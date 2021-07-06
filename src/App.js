@@ -4,6 +4,7 @@ import Home from './Home';
 import Protected from './Protected';
 import Visitor from './Visitor';
 import BookAppointment from './BookAppointment';
+import MyAppointments from './MyAppointments';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Route path="/visitor" component={Visitor}></Route>
                     <Route path="/home"><Protected isAdminRoute={false} component={Home} /></Route>
                     <Route path="/bookappointment"><Protected isAdminRoute={false} component={BookAppointment} /></Route>
+                    <Route path="/myappointments"><Protected isAdminRoute={false} component={MyAppointments} /></Route>
                     <Route path="/demo"><Protected isAdminRoute={true} component={Home} /></Route>
                     <Route exact path="/" render={() => <Redirect to="/visitor" />}></Route>
                     <Route path="*" render={() => <Redirect to="/visitor" />}></Route>

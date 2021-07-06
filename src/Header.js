@@ -28,7 +28,7 @@ export default class Header extends Component {
                             <Nav className="m-auto">
                                 <Nav.Link href='/home'>Home</Nav.Link>
                                 <Nav.Link href='#aboutUs'>My Addresses</Nav.Link>
-                                <Nav.Link href='#aboutUs'>My Bookings</Nav.Link>
+                                <Nav.Link href='/myappointments'>My Appointments</Nav.Link>
                                 <Nav.Link href='#contactUs'>My Orders</Nav.Link>
                                 <Nav.Link>
                                     <Button variant="primary" onClick={this.handleOpen}>

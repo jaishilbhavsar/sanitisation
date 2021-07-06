@@ -1,0 +1,40 @@
+@import '/src/App.scss';
+
+.MyAppointmentPage {
+
+    .row {
+        vertical-align: middle !important;
+
+        .cardRows {
+            text-align: left;
+            margin-top: 2%;
+            border-radius: 10px;
+            border: 1px solid $customModalBorder;
+
+            b {
+                color: $cutomPrimaryColor !important;
+            }
+
+            p,
+            .card-title {
+                color: white !important;
+            }
+        }
+
+        .cardRows:hover {
+            border-radius: 10px !important;
+            background-color: $customModalBackground;
+            color: $cutomPrimaryColor;
+            box-shadow: 1px 1px 5px 5px $cutomPrimaryColor;
+
+            b {
+                color: white !important;
+            }
+
+            p,
+            .card-title {
+                color: $cutomPrimaryColor !important;
+            }
+        }
+    }
+}
