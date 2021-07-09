@@ -13,13 +13,9 @@ export default class MyAppointments extends Component {
         this.state = {
             redirect: null,
             userID: Number(localStorage.getItem("userID")),
-            myAppointments: []
+            myAppointments: [],
+            rescheduleData: {}
         };
-    }
-    redirectTo = (param) => {
-        this.setState({
-            redirect: param
-        });
     }
     getAllUserAppointments = async () => {
         this.appointmentService.GetAllAppointmentsByUserId(this.state.userID).then(async (data) => {
@@ -31,9 +27,21 @@ export default class MyAppointments extends Component {
     componentDidMount = async () => {
         await this.getAllUserAppointments();
     }
+    rescheduleAppointmentClick = async (data) => {
+        console.log(data);
+        await this.setState({
+            rescheduleData: {
+                "noOfRooms": data.noOfRooms,
+                "selectedDate": data.appoitmentDate,
+                "selectedAddressId": data.addressID,
+                "appointmentID": data.appointmentID
+            }
+        });
+        await this.setState({ redirect: "/bookappointment" });
+    }
     render() {
         if (this.state.redirect) {
-            return <Redirect to={this.state.redirect} />
+            return <Redirect to={{ pathname: this.state.redirect, state: { data: this.state.rescheduleData } }} />
         }
         return (
             <div className="container MyAppointmentPage">
@@ -64,7 +72,7 @@ export default class MyAppointments extends Component {
                                             <Col>
                                                 {data.status != 'done' ?
                                                     <div>
-                                                        <button className="btn btn-primary">Reschedule Appointment</button>
+                                                        <button className="btn btn-primary" onClick={() => (this.rescheduleAppointmentClick(data))}>Reschedule Appointment</button>
                                                         <br></br>
                                                         <br></br>
                                                         <button className="btn btn-danger">Cancel Appointment</button>

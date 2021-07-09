@@ -23,6 +23,20 @@ export default class AppointmentService extends React.Component {
             .catch(error => { res = false });
         return res;
     }
+    EditAppointment = async (data) => {
+        let url = APIurl.URL;
+        let res;
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        await fetch(url + 'appointment/editappointment', requestOptions)
+            .then(response => response.json())
+            .then(result => { res = result; })
+            .catch(error => { res = false });
+        return res;
+    }
     GetAllAppointmentsByUserId = async (data) => {
         let url = APIurl.URL;
         let res;
