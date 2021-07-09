@@ -1,0 +1,26 @@
+@import '/src/App.scss';
+
+.AboutusPage {
+    .row {
+        .card {
+            // background-color: pink;
+            margin-top: 15px;
+            border-radius: 10px;
+            border: 1px solid $customModalBorder;
+        }
+
+        .card-img-top {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .card-body {
+            border-radius: 0px 0px 10px 10px;
+            // background-color: $customModalBackground;
+        }
+
+        .card-title {
+            color: $cutomPrimaryColor;
+
+        }
+    }
+}

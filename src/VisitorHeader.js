@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { Button, Container, Modal, Nav, Navbar } from 'react-bootstrap';
 import LoginSignup from './LoginSignup';
+import './VisitorHeader.scss';
+import logo from './assets/images/logo_transparent.png';
 export default class VisitorHeader extends Component {
-    state = {
-        isLoginOpen: false,
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoginOpen: false,
+        };
+    }
     handleOpen = async () => {
         await this.setState({ isLoginOpen: true });
     };
@@ -13,22 +18,26 @@ export default class VisitorHeader extends Component {
     };
     render() {
         return (
-            <div>
+            <div className="VisitorHeader">
                 <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
                     <Container>
-                        <Navbar.Brand href="#home">Sanitise Your Home</Navbar.Brand>
+                        <Navbar.Brand href="/visitor">
+                            <img src={logo} alt="logo" />
+                            {/* <Image src={logo} fluid crop="fill"></Image> */}
+                        </Navbar.Brand>
+                        {/* <Navbar.Brand href="/visitor">Be Wise, Sanitise.</Navbar.Brand> */}
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="m-auto">
-                                <Nav.Link className="pr-5" href='/home'>Home</Nav.Link>
-                                <Nav.Link className="pr-5" href='/home'>Home</Nav.Link>
-                                <Nav.Link className="pr-5" href='/home'>About Us</Nav.Link>
-                                <Nav.Link className="pr-5" href='/home'>Contact Us</Nav.Link>
-                                <Nav.Item className="pl-5">
+                                <Nav.Link href='/home'>Home</Nav.Link>
+                                <Nav.Link href='#aboutUs'>About Us</Nav.Link>
+                                <Nav.Link href='#contactUs'>Contact Us</Nav.Link>
+                                <Nav.Link href='#faq'>FAQs</Nav.Link>
+                                <Nav.Link>
                                     <Button variant="primary" onClick={this.handleOpen}>
                                         Login/SignUp
                                     </Button>
-                                </Nav.Item>
+                                </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

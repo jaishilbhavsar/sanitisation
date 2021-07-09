@@ -1,19 +1,36 @@
 import React, { Component } from "react";
 import { FormControl, InputGroup } from "react-bootstrap";
 import { EyeFill, EyeSlashFill, PersonFill } from "react-bootstrap-icons";
-
-export default class Signup extends Component {
+import UserService from "./services/UserService";
+import { withAlert } from 'react-alert';
+class Signup extends Component {
+    userService = new UserService();
     constructor(props) {
         super();
         this.state = {
             isRevealPassword: false
         }
     }
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
         console.log(event.target.Email.value);
         console.log(event.target.Password.value);
         console.log(event.target.Username.value);
+        let data = {
+            email: event.target.Email.value,
+            password: event.target.Password.value,
+            userName: event.target.Username.value,
+            isActive: 1,
+            userTypeID: 3
+        };
+        let res = await this.userService.Signup(data);
+        if (res.affectedRows > 0) {
+            this.props.alert.success("User Registered.Please log in.");
+        }
+        else {
+            this.props.alert.error("Something went wrong please try again.");
+        }
+
     }
     showHidePassword = async () => {
         await this.setState({ isRevealPassword: !this.state.isRevealPassword });
@@ -97,3 +114,4 @@ export default class Signup extends Component {
         );
     }
 }
+export default withAlert()(Signup);

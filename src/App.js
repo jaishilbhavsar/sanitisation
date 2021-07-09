@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.scss';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import LoginSignup from './LoginSignup';
 import Home from './Home';
-import Header from './Header';
 import Protected from './Protected';
 import Visitor from './Visitor';
+import BookAppointment from './BookAppointment';
+import MyAppointments from './MyAppointments';
 
 function App() {
     return (
@@ -14,7 +13,10 @@ function App() {
             <Router>
                 <Switch>
                     <Route path="/visitor" component={Visitor}></Route>
-                    <Route path="/home"><Protected component={Home} /></Route>
+                    <Route path="/home"><Protected isAdminRoute={false} component={Home} /></Route>
+                    <Route path="/bookappointment"><Protected isAdminRoute={false} component={BookAppointment} /></Route>
+                    <Route path="/myappointments"><Protected isAdminRoute={false} component={MyAppointments} /></Route>
+                    <Route path="/demo"><Protected isAdminRoute={true} component={Home} /></Route>
                     <Route exact path="/" render={() => <Redirect to="/visitor" />}></Route>
                     <Route path="*" render={() => <Redirect to="/visitor" />}></Route>
                 </Switch>

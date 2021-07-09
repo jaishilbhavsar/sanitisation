@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Button, Card, Modal } from 'react-bootstrap';
-import LoginSignup from './LoginSignup';
-import { Image } from "react-bootstrap";
+import { Card } from 'react-bootstrap';
 import VisitorHeader from './VisitorHeader';
 import './Visitor.scss';
-import sanitiserHomeImage from './assets/images/sanitiserHome.jpg';
+import sanitiserHomeImage from './assets/images/HomeSanitising4.jpg';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
+import FAQ from './FAQ';
+import HowItWorks from './HowItWorks';
 export default class Visitor extends Component {
     constructor(props) {
         super(props);
@@ -17,8 +17,12 @@ export default class Visitor extends Component {
     render() {
         // const { classes } = this.props;
         return (
-            <div>
-                <VisitorHeader />
+            <div className="visitorPage">
+                <div style={{ position: 'sticky', top: '0', zIndex: 10 }}>
+                    {/* <Sticky topOffset={20}> */}
+                    <VisitorHeader />
+                    {/* </Sticky> */}
+                </div>
                 <Card>
                     <Card.Img className="img-fluid" variant="top" src={sanitiserHomeImage} />
                     <Card.ImgOverlay className="SanitizerImageText d-flex flex-column justify-content-botom align-items-end">
@@ -31,10 +35,16 @@ export default class Visitor extends Component {
                     </Card.ImgOverlay>
                 </Card>
                 {/* <br /> */}
-                <div style={{ marginTop: '2px' }}>
+                <div style={{ marginTop: '10px' }}>
+                    <HowItWorks />
+                </div>
+                <div style={{ marginTop: '20px' }} id="faq">
+                    <FAQ />
+                </div>
+                <div style={{ marginTop: '20px' }} id="aboutUs">
                     <AboutUs />
                 </div>
-                <div style={{ marginTop: '2px' }}>
+                <div style={{ marginTop: '20px' }} id="contactUs">
                     <ContactUs />
                 </div>
             </div >

@@ -3,26 +3,49 @@ import { FormControl, InputGroup, Modal } from "react-bootstrap";
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
 import ForgotPassword from "./ForgotPassword";
 import UserService from "./services/UserService";
-export default class Login extends Component {
+import { withAlert } from 'react-alert';
+import { Redirect } from "react-router";
+class Login extends Component {
     userService = new UserService();
-
     constructor(props) {
-        super();
+        super(props);
         this.state = {
             isRevealPassword: false,
-            isForgotPasswordOpen: false
-
+            isForgotPasswordOpen: false,
+            showAlert: false,
+            alertVariant: "success",
+            alertMessage: "",
+            redirect: null
         }
     }
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
+        // let alert = useAlert();
         event.preventDefault();
-        console.log(event.target.Email.value);
-        console.log(event.target.Password.value);
         let data = {
             email: event.target.Email.value,
             password: event.target.Password.value
         };
-        this.userService.Login(data);
+        let res = await this.userService.Login(data);
+        if (res.length > 0) {
+            console.log(res);
+            localStorage.setItem("email", res[0].email);
+            localStorage.setItem("userID", res[0].userID);
+            localStorage.setItem("userTypeID", Number(res[0].userTypeID));
+            localStorage.setItem("name", res[0].userName);
+            this.props.alert.success("User Logged In");
+            if (Number(res[0].userTypeID) === 3) {
+                await this.setState({ redirect: "/home" });
+            }
+            else {
+                await this.setState({ redirect: "/demo" });
+            }
+        }
+        else {
+            console.log(res);
+            console.log("error");
+            this.props.alert.error("User Not Found");
+            // this.props.onShowAlert("danger", "User Not Found.");
+        }
     }
     handleOpen = async () => {
         await this.setState({ isForgotPasswordOpen: true });
@@ -34,6 +57,10 @@ export default class Login extends Component {
         await this.setState({ isRevealPassword: !this.state.isRevealPassword });
     }
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
+        // const alert = this.props.alert;
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -89,7 +116,7 @@ export default class Login extends Component {
 
                     <button type="submit" className="btn btn-primary btn-lg btn-block">Login</button>
                     <p className="forgot-password text-right">
-                        <a href="#" onClick={this.handleOpen}>Forgot password?</a>
+                        <a onClick={this.handleOpen}>Forgot password?</a>
                     </p>
 
                 </form>
@@ -108,12 +135,9 @@ export default class Login extends Component {
                     <Modal.Body>
                         <ForgotPassword closePopup={this.handleClose} />
                     </Modal.Body>
-                    {/* <Modal.Footer>
-                        <Button onClick={this.handleClose}>Close</Button>
-                    </Modal.Footer> */}
                 </Modal>
             </div>
-
         );
     }
 }
+export default withAlert()(Login);

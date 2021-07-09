@@ -1,0 +1,48 @@
+@import '/src/App.scss';
+
+.HomePage {
+
+    .row {
+        vertical-align: middle !important;
+
+        .card {
+            margin-top: 20%;
+            border-radius: 10px;
+            border: 1px solid $customModalBorder;
+        }
+
+        .card-img-top {
+            align-items: center;
+            height: 200px;
+            vertical-align: middle !important;
+            width: auto;
+            object-fit: contain;
+            border-bottom: 2px solid $customModalBorder;
+        }
+
+        .card-img-top:hover {
+            align-items: center;
+            height: 200px;
+            vertical-align: middle !important;
+            width: auto;
+            object-fit: contain;
+            border-bottom: 2px solid $cutomPrimaryColor;
+        }
+
+        .card-body {
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .card-body:hover {
+            border-radius: 0px 0px 10px 10px;
+            box-shadow: 5px 5px 8px $cutomPrimaryColor;
+        }
+
+        .card:hover {
+            border-radius: 10px !important;
+            background-color: $customModalBackground;
+            color: $cutomPrimaryColor;
+            box-shadow: 1px 1px 5px 5px $cutomPrimaryColor;
+        }
+    }
+}

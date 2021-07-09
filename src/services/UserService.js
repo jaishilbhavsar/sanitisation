@@ -10,16 +10,31 @@ export default class UserService extends React.Component {
     }
     Login = async (data) => {
         let url = APIurl.URL;
+        let res;
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        fetch(url + 'user/login', requestOptions)
+        await fetch(url + 'user/login', requestOptions)
             .then(response => response.json())
-            .then(result => {
-                console.log(result);
-            });
+            .then(result => { res = result; })
+            .catch(error => { res = false });
+        return res;
+    }
+    Signup = async (data) => {
+        let url = APIurl.URL;
+        let res;
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        await fetch(url + 'user/signup', requestOptions)
+            .then(response => response.json())
+            .then(result => { res = result; })
+            .catch(error => { res = false });
+        return res;
     }
 
 }

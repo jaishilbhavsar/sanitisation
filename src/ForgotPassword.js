@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Button, FormControl, InputGroup } from "react-bootstrap";
-import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
-
 export default class ForgotPassword extends Component {
     constructor(props) {
         super();
