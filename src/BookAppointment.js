@@ -18,7 +18,6 @@ class BookAppointment extends Component {
     appointmentService = new AppointmentService();
     constructor(props) {
         super(props);
-        console.log(this.props.location.state);
         this.state = {
             noOfRooms: props.location == undefined || props.location == null || props.location.state == undefined ? 1 : props.location.state.data.noOfRooms,
             userID: Number(localStorage.getItem("userID")),
@@ -48,9 +47,9 @@ class BookAppointment extends Component {
     };
     getAllUserAddresses = async () => {
         this.addressService.GetAllUserAddresses(this.state.userID).then(async (res) => {
-            if (res) {
+            if (res.length > 0) {
                 // if (res.lenth > 0) {
-                console.log("inside");
+                console.log(res);
                 if (this.state.appointmentID == 0) {
                     await this.setState({ listOfAddresses: res, selectedAddressId: res[0].addressID });
                 }
