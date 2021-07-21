@@ -3,9 +3,11 @@ import { Button, Container, Modal, Nav, Navbar } from 'react-bootstrap';
 import LoginSignup from './LoginSignup';
 import './Header.scss';
 import logo from './assets/images/logo_transparent.png';
+import { Redirect } from 'react-router';
 export default class Header extends Component {
     state = {
         isLoginOpen: false,
+        redirectTo: null
     };
     handleOpen = async () => {
         await this.setState({ isLoginOpen: true });
@@ -13,7 +15,17 @@ export default class Header extends Component {
     handleClose = async () => {
         await this.setState({ isLoginOpen: false });
     };
+    logout = async () => {
+        localStorage.removeItem('email');
+        localStorage.removeItem('userID');
+        localStorage.removeItem('userTypeID');
+        localStorage.removeItem('name');
+        await this.setState({ redirectTo: "/visitor" });
+    };
     render() {
+        if (this.state.redirectTo != null) {
+            return <Redirect to={this.state.redirectTo} />
+        }
         return (
             <div className="Header">
                 <Navbar bg="dark" variant="dark" expand="lg" sticky="left" className="sidebar">
@@ -27,11 +39,11 @@ export default class Header extends Component {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="m-auto">
                                 <Nav.Link href='/home'>Home</Nav.Link>
-                                <Nav.Link href='#aboutUs'>My Addresses</Nav.Link>
+                                <Nav.Link href='/myaddresses'>My Addresses</Nav.Link>
                                 <Nav.Link href='/myappointments'>My Appointments</Nav.Link>
                                 <Nav.Link href='#contactUs'>My Orders</Nav.Link>
                                 <Nav.Link>
-                                    <Button variant="primary" onClick={this.handleOpen}>
+                                    <Button variant="primary" onClick={this.logout}>
                                         {localStorage.getItem("name")}, Logout ?
                                     </Button>
                                 </Nav.Link>

@@ -19,32 +19,32 @@ class Login extends Component {
         }
     }
     handleSubmit = async (event) => {
-        // let alert = useAlert();
         event.preventDefault();
         let data = {
             email: event.target.Email.value,
             password: event.target.Password.value
         };
         let res = await this.userService.Login(data);
-        if (res.length > 0) {
-            console.log(res);
-            localStorage.setItem("email", res[0].email);
-            localStorage.setItem("userID", res[0].userID);
-            localStorage.setItem("userTypeID", Number(res[0].userTypeID));
-            localStorage.setItem("name", res[0].userName);
-            this.props.alert.success("User Logged In");
-            if (Number(res[0].userTypeID) === 3) {
-                await this.setState({ redirect: "/home" });
+        if (res.isSuccess != undefined) {
+            if (res.isSuccess == 1) {
+                localStorage.setItem("email", res.data[0].email);
+                localStorage.setItem("userID", res.data[0].userID);
+                localStorage.setItem("userTypeID", Number(res.data[0].userTypeID));
+                localStorage.setItem("name", res.data[0].userName);
+                this.props.alert.success("User Logged In");
+                if (Number(res.data[0].userTypeID) === 3) {
+                    await this.setState({ redirect: "/home" });
+                }
+                else {
+                    await this.setState({ redirect: "/demo" });
+                }
             }
             else {
-                await this.setState({ redirect: "/demo" });
+                this.props.alert.error(res.message);
             }
         }
         else {
-            console.log(res);
-            console.log("error");
-            this.props.alert.error("User Not Found");
-            // this.props.onShowAlert("danger", "User Not Found.");
+            this.props.alert.error(res.message);
         }
     }
     handleOpen = async () => {
