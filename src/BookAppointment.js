@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { Form, FormControl, InputGroup, Modal } from "react-bootstrap";
-import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
-import ForgotPassword from "./ForgotPassword";
-import UserService from "./services/UserService";
+import { FormControl, InputGroup } from "react-bootstrap";
 import { Redirect, withRouter } from "react-router";
 import AddressService from './services/AddressService';
 import ChargeService from "./services/ChargeService";

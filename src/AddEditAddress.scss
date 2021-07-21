@@ -1,0 +1,12 @@
+@import '/src/App.scss';
+
+.AddEditAddressPage {
+    .modal-title {
+        color: $cutomPrimaryColor !important;
+        font-weight: 700 !important;
+    }
+
+    .subtitle {
+        color: $cutomPrimaryColor !important;
+    }
+}

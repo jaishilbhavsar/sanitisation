@@ -19,7 +19,7 @@ export default class AddressService extends React.Component {
             .catch(error => { res = false });
         return res;
     }
-    Signup = async (data) => {
+    AddAddress = async (data) => {
         let url = APIurl.URL;
         let res;
         const requestOptions = {
@@ -27,7 +27,21 @@ export default class AddressService extends React.Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        await fetch(url + 'user/signup', requestOptions)
+        await fetch(url + 'address/InsertAddress', requestOptions)
+            .then(response => response.json())
+            .then(result => { res = result; })
+            .catch(error => { res = false });
+        return res;
+    }
+    EditAddress = async (data) => {
+        let url = APIurl.URL;
+        let res;
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        await fetch(url + 'address/EditAddress', requestOptions)
             .then(response => response.json())
             .then(result => { res = result; })
             .catch(error => { res = false });

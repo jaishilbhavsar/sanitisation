@@ -28,7 +28,7 @@ class Signup extends Component {
             this.props.alert.success("User Registered.Please log in.");
         }
         else {
-            this.props.alert.error("Something went wrong please try again.");
+            this.props.alert.error(res.message);
         }
 
     }

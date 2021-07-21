@@ -4,6 +4,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Redirect } from 'react-router';
 import AppointmentService from './services/AppointmentService';
 import './MyAppointments.scss';
+import DeleteItem from './DeleteItem';
 
 // AWS.config.update({ accessKeyId: config.access_key, secretAccessKey: config.secret_key });
 export default class MyAppointments extends Component {
@@ -14,7 +15,9 @@ export default class MyAppointments extends Component {
             redirect: null,
             userID: Number(localStorage.getItem("userID")),
             myAppointments: [],
-            rescheduleData: {}
+            rescheduleData: {},
+            deleteData: {},
+            showDelete: false
         };
     }
     getAllUserAppointments = async () => {
@@ -39,12 +42,31 @@ export default class MyAppointments extends Component {
         });
         await this.setState({ redirect: "/bookappointment" });
     }
+    handleDeleteClose = async (isRefresh) => {
+        await this.setState({ showDelete: false });
+        if (isRefresh) {
+            this.getAllUserAppointments();
+        }
+    }
+    deleteAppointmentClick = async (data) => {
+        console.log(data);
+        await this.setState({
+            deleteData: {
+                "id": data.appointmentID,
+                "api": "appointment/deleteappointment/",
+                "title": "Delete Appointment",
+                "subtitle": "appointment on " + data.appoitmentDate,
+            }
+        });
+        await this.setState({ showDelete: true });
+    }
     render() {
         if (this.state.redirect) {
             return <Redirect to={{ pathname: this.state.redirect, state: { data: this.state.rescheduleData } }} />
         }
         return (
             <div className="container MyAppointmentPage">
+                {this.state.showDelete ? <DeleteItem data={this.state.deleteData} handleDeleteClose={this.handleDeleteClose} /> : null}
                 {this.state.myAppointments.length > 0 ?
                     this.state.myAppointments.map((data,) =>
                         <Row>
@@ -75,7 +97,7 @@ export default class MyAppointments extends Component {
                                                         <button className="btn btn-primary" onClick={() => (this.rescheduleAppointmentClick(data))}>Reschedule Appointment</button>
                                                         <br></br>
                                                         <br></br>
-                                                        <button className="btn btn-danger">Cancel Appointment</button>
+                                                        <button className="btn btn-danger" onClick={() => { this.deleteAppointmentClick(data); }}>Cancel Appointment</button>
                                                     </div>
                                                     : null}
                                             </Col>
