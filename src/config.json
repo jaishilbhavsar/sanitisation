@@ -1,6 +1,6 @@
 {
     "APIurl": {
-       "URL": "http://app-78e5298c-6563-4d4e-a289-03c0f5e70d4f.cleverapps.io/"
+       "URL": "http://localhost:3001/"
     },
       "access_key":"HNSNHOCRBGSYYZYGSDL1",
       "secret_key":"mK1MvBHmHXraib3bUhDoUb05S6CE74MDFGa43Evk",
