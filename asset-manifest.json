@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/sanitisation/static/css/main.7a10e887.chunk.css",
+    "main.js": "/sanitisation/static/js/main.cf935faf.chunk.js",
+    "main.js.map": "/sanitisation/static/js/main.cf935faf.chunk.js.map",
+    "runtime-main.js": "/sanitisation/static/js/runtime-main.054e47cd.js",
+    "runtime-main.js.map": "/sanitisation/static/js/runtime-main.054e47cd.js.map",
+    "static/js/2.9af5932d.chunk.js": "/sanitisation/static/js/2.9af5932d.chunk.js",
+    "static/js/2.9af5932d.chunk.js.map": "/sanitisation/static/js/2.9af5932d.chunk.js.map",
+    "static/js/3.d3452fc8.chunk.js": "/sanitisation/static/js/3.d3452fc8.chunk.js",
+    "static/js/3.d3452fc8.chunk.js.map": "/sanitisation/static/js/3.d3452fc8.chunk.js.map",
+    "index.html": "/sanitisation/index.html",
+    "static/css/main.7a10e887.chunk.css.map": "/sanitisation/static/css/main.7a10e887.chunk.css.map",
+    "static/js/2.9af5932d.chunk.js.LICENSE.txt": "/sanitisation/static/js/2.9af5932d.chunk.js.LICENSE.txt",
+    "static/media/HomeSanitising4.9134dce7.jpg": "/sanitisation/static/media/HomeSanitising4.9134dce7.jpg",
+    "static/media/demo.c39cb51c.jpg": "/sanitisation/static/media/demo.c39cb51c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.054e47cd.js",
+    "static/js/2.9af5932d.chunk.js",
+    "static/css/main.7a10e887.chunk.css",
+    "static/js/main.cf935faf.chunk.js"
+  ]
+}
