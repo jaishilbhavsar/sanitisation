@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Redirect } from 'react-router';
 import sanitiserHomeImage from './assets/images/HomeSanitising4.jpg';
+import AppointmentImage from './assets/images/Appointment3.png';
+import ProductImage from './assets/images/Mask1.png';
 import './Home.scss';
 
 // AWS.config.update({ accessKeyId: config.access_key, secretAccessKey: config.secret_key });
@@ -55,7 +57,7 @@ export default class Home extends Component {
                 <Row>
                     <Col>
                         <Card onClick={() => { this.redirectTo("/bookappointment") }}>
-                            <Card.Img variant="top" src={sanitiserHomeImage} />
+                            <Card.Img variant="top" src={AppointmentImage} />
                             <Card.Body>
                                 <Card.Title>+ Book An Appointment</Card.Title>
                                 {/* <input type="file" name="Image Demo" onChange={this.onChangeHandler} />
@@ -68,8 +70,8 @@ export default class Home extends Component {
                         </Card>
                     </Col>
                     <Col>
-                        <Card>
-                            <Card.Img variant="top" src={sanitiserHomeImage} />
+                        <Card onClick={() => { this.redirectTo("/products") }}>
+                            <Card.Img variant="top" src={ProductImage} />
                             <Card.Body>
                                 <Card.Title>View Products</Card.Title>
                                 <Card.Text>

@@ -1,0 +1,70 @@
+@import '/src/App.scss';
+
+.ProductsPage {
+    .row {
+        .card {
+            margin-top: 4%;
+            border-radius: 10px;
+            border: 1px solid $customModalBorder;
+        }
+
+        .card:hover {
+            // background-color: pink;
+            border-radius: 10px !important;
+            background-color: $customModalBackground;
+            color: $cutomPrimaryColor;
+            box-shadow: 1px 1px 5px 5px $cutomPrimaryColor;
+
+            .ProductTitle {
+
+                font-weight: 800;
+                text-align: left;
+                font-size: large;
+                color: $cutomPrimaryColor;
+            }
+
+            .priceTag {
+                font-weight: 700;
+                text-align: Right;
+                color: $cutomPrimaryColor !important;
+            }
+
+            .dollarTag {
+                color: white !important;
+                font-weight: 700;
+                margin-right: 5px;
+            }
+        }
+
+        .card-img-top {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .card-body {
+            border-radius: 0px 0px 10px 10px;
+            background-color: $customModalBackground;
+            color: $cutomPrimaryColor;
+        }
+
+        .ProductTitle {
+            color: white;
+            font-weight: 800;
+            text-align: left;
+            font-size: large;
+        }
+
+        .priceTag {
+            font-weight: 700;
+            text-align: Right;
+            color: white !important;
+        }
+
+        .dollarTag {
+            color: $cutomPrimaryColor;
+            font-weight: 700;
+            margin-right: 5px;
+        }
+
+
+    }
+}

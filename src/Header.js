@@ -41,7 +41,7 @@ export default class Header extends Component {
                                 <Nav.Link href='/home'>Home</Nav.Link>
                                 <Nav.Link href='/myaddresses'>My Addresses</Nav.Link>
                                 <Nav.Link href='/myappointments'>My Appointments</Nav.Link>
-                                <Nav.Link href='#contactUs'>My Orders</Nav.Link>
+                                <Nav.Link href='/myorders'>My Orders</Nav.Link>
                                 <Nav.Link>
                                     <Button variant="primary" onClick={this.logout}>
                                         {localStorage.getItem("name")}, Logout ?

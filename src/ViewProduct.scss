@@ -1,0 +1,30 @@
+@import '/src/App.scss';
+
+.ViewProductPage {
+
+    .MainCard {
+        margin-top: 5%;
+        border: 1px solid $customModalBorder;
+        border-radius: 10px !important;
+        background-color: $customModalBackground;
+        color: $cutomPrimaryColor;
+        box-shadow: 1px 1px 5px 5px $cutomPrimaryColor;
+    }
+
+    .row {
+        .card-title {
+            margin-top: 2%;
+            text-align: center;
+        }
+
+        .MoreDetails {
+            height: auto;
+            background-color: $customModalBackground;
+        }
+
+        .imageCol {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    }
+}
