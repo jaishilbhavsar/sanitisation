@@ -1,6 +1,6 @@
 {
     "APIurl": {
-       "URL": "http://localhost:3001/"
+       "URL": "https://sanitisation-backend.herokuapp.com/"
     },
       "access_key":"HNSNHOCRBGSYYZYGSDL1",
       "secret_key":"mK1MvBHmHXraib3bUhDoUb05S6CE74MDFGa43Evk",
